@@ -15,11 +15,12 @@ body{
 }
 /*  Main */
 .main-panel{
-    width:95%;
+    width:80%;
     height:55rem;
     display: grid;
-    grid-template-columns: 8% 57% 35%;
-    margin:.5rem auto 0rem auto;
+    grid-template-columns: 8% 50% 42%;
+    margin-top:1rem;
+    margin-left:1rem;
     background-color:#615D54;
     border-radius: 1rem;
 }
@@ -66,6 +67,64 @@ body{
     background-color: rgb(32, 32, 32);
     margin: 3% auto 0 auto;
     border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: 'Graduate', cursive;
+    
+}
+.screen-left{
+    display: grid;
+    grid-template-rows: .5fr .5fr .5fr 1fr 1fr 1fr 2fr .5fr .5fr .5fr .5fr .5fr .5fr .5fr .5fr .5fr 1fr;
+    padding-left:.2rem;
+}
+.left-sub1{
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    font-size: 1.2rem;
+}
+.prog-actual-position{
+    color:rgb(0, 170, 0);
+}
+.prog-part-number{
+    color:yellow;
+    padding-left:4rem;
+}
+.axis-sub{
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    font-size: 2.8rem;
+    color:white;
+}
+.left-sub3{
+    text-align: center;
+    color: rgb(88, 161, 190);
+}
+.left-sub8{
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    text-align: center;
+    color: rgb(88, 161, 190);
+}
+.modals{
+    display: grid;
+    grid-template-columns: 1.4fr 1.4fr 1.4fr 2fr 2fr 2fr;
+    color:white;
+}
+.blue-letter{
+    color: rgb(88, 161, 190);
+}
+.modal-last{
+    text-align: end;
+}
+.left-sub17{
+    display: grid;
+    grid-template-columns: .5fr 1fr 1fr 1fr 1fr 1fr;
+    border-left: solid 1px rgb(88, 161, 190);
+    padding-right:1rem;
+}
+.soft-key-menu{
+    border-top: solid 1px rgb(88, 161, 190);
+    border-right: solid 1px rgb(88, 161, 190);
 }
 .soft-keys{
     width:100%;
@@ -95,6 +154,7 @@ body{
     font-weight: bold;
     padding-top:1.4rem;
     height:4rem;
+    overflow: hidden;
 }
 .hard-key:hover{
     box-shadow: .2rem .0rem .5rem black, -.2rem 0rem .5rem black,0rem .2rem .5rem black, 0rem -.2rem .5rem black;
@@ -103,7 +163,7 @@ body{
     box-shadow: .2rem .0rem .5rem green, -.2rem 0rem .5rem green,0rem .2rem .5rem green, 0rem -.2rem .5rem green;
 }
 .keyboard{
-    width:80%;
+    width:70%;
     height:90%;
     margin:5% auto;
     display: grid;
