@@ -7,12 +7,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Graduate" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
     <!--MAIN PANEL START-->
     <div class="main-panel">
         <div class="on-off-section">
-            <div class="power btn-on">
+            <div class="power btn-on highlight">
                 <p>ON</p>
             </div>
             <div class="power btn-off">
@@ -21,104 +22,7 @@
         </div>
         <div class="screen-section">
             <div class="screen">
-                <div class="screen-left">
-                    <div class="left-sub left-sub1">
-                        <div class="prog-actual-position">ACTUAL POSITION</div>
-                        <div class="prog-part-number">CL1211-20</div>
-                    </div>
-                    <div class="left-sub left-sub2"></div>
-                    <div class="left-sub left-sub3">(ABSOLUTE)</div>
-                    <div class="left-sub axis-sub left-sub4">
-                        <div class="left-axis axis-x">X</div>
-                        <div class="left-axis-x-value">0.00000</div>
-                    </div>
-                    <div class="left-sub axis-sub left-sub5">
-                        <div class="left-axis axis-y">Y</div>
-                        <div class="left-axis-y-value">3.00000</div>
-                    </div>
-                    <div class="left-sub axis-sub left-sub6">
-                        <div class="left-axis axis-z">Z</div>
-                        <div class="left-axis-z-value">4.00000</div>
-                    </div>
-                    <div class="left-sub left-sub7"></div>
-                    <div class="left-sub left-sub8">
-                        <div>(MODAL)</div>
-                        <div></div>
-                    </div>
-                    <div class="left-sub modals left-sub9">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="left-sub modals left-sub10">
-                        <div>G00</div>
-                        <div>G40</div>
-                        <div>G55</div>
-                        <div class="blue-letter">F</div>
-                        <div>60.00 <span class="blue-letter">M</span></div>
-                        <div class="modal-last">30</div>
-                    </div>
-                    <div class="left-sub modals left-sub11">
-                        <div>G17</div>
-                        <div>G49</div>
-                        <div>G64</div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="left-sub modals left-sub12">
-                        <div>G90</div>
-                        <div>G80</div>
-                        <div>G69</div>
-                        <div class="blue-letter">H</div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="left-sub modals left-sub13">
-                        <div>G22</div>
-                        <div>G98</div>
-                        <div>G15</div>
-                        <div class="blue-letter">D</div>
-                        <div class="blue-letter">T</div>
-                        <div></div>
-                    </div>
-                    <div class="left-sub modals left-sub14">
-                        <div>G94</div>
-                        <div>G50</div>
-                        <div>G25</div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="left-sub modals left-sub15">
-                        <div>G20</div>
-                        <div>G67</div>
-                        <div></div>
-                        <div class="blue-letter">S</div>
-                        <div>0</div>
-                        <div></div>
-                    </div>
-                    <div class="left-sub modals left-sub16">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div class="blue-letter">SACT</div>
-                        <div>0</div>
-                        <div></div>
-                    </div>
-                    <div class="left-sub left-sub17">
-                        <div class="soft-key-menu"></div>
-                        <div class="soft-key-menu"></div>
-                        <div class="soft-key-menu"></div>
-                        <div class="soft-key-menu"></div>
-                        <div class="soft-key-menu"></div>
-                        <div class="soft-key-menu"></div>
-                    </div>
-                </div>
-                <div class="screen-right"></div>
+                
             </div>
             <div class="soft-keys">
                 <div class="soft" id="soft-1"></div>
@@ -245,12 +149,152 @@
         </div>
     </div>
     <!--MAIN PANEL END-->
-    <div class="nav-item" id="go-btm">UP</div>
-    <div class="nav-item" id="go-top">DOWN</div>
+    <!--INSTRUCTION CONTAINER STARTS-->
+    <div class="instruction-container">
+        <ol class="instruction-list">
+            <li class="li-1">Power on the machine</li>
+            <li class="li-2">Home the axis</li>
+                <ol class="sub-list">
+                    <li class="li-2-1">Start the Machine</li>
+                    <li class="li-2-2">Press Reset</li>
+                    <li class="li-2-3">Turn knob to JOG</li>
+                    <li class="li-2-4">Jog each axis in the middle</li>
+                    <li class="li-2-5">Turn knob to Home</li>
+                    <li class="li-2-6">Press Cycle Start</li>
+                </ol>
+            <li class="li-3">Change readable ofsfset values to G55</li>
+            <ol class="sub-list">
+                <li class="li-3-1">Turn Knob to MDI</li>
+                <li class="li-3-2">Enter "G55" then Press Insert</li>
+                <li class="li-3-3">Press EOB then Press Insert</li>
+                <li class="li-3-4">Press Reset</li>
+                <li class="li-3-5">Press Cycle Start</li>
+            </ol>
+            <li class="li-4">Load the correct program</li>
+            <li class="li-5">"Touch-off"</li>
+            <li class="li-5">Run</li>
+        </ol>
+    </div>
     <!--BOTTOM PANEL STARTS-->
     <div class="bottom-panel">
-        <div class="btm-panle-row"></div>
-        <div class="btm-panle-row"></div>
+        <div class="bottom-panel-col1">
+            <div><span class="knob-span-no-hover">Spindle Start</span></div>
+            <div>
+                <div class="green-btn"></div>
+            </div>
+            <div>
+                <div class="red-btn"></div>
+            </div>
+        </div>
+        <div class="bottom-panel-col2">
+            <div><span class="knob-span-no-hover">Coolent</span></div>
+            <div>
+                <div class="green-btn"></div>
+            </div>
+            <div>
+                <div class="red-btn"></div>
+            </div>
+        </div>
+        <div class="bottom-panel-col3">
+            <div></div>
+            <div></div>
+            <div class="knob">
+                <div class="knob-sub">
+                    <div></div>
+                    <div id="knob-run"><span class="knob-span">RUN</span></div>
+                    <div id="knob-edit"><span class="knob-span">EDIT</span></div>
+                </div>
+                <div class="knob-sub-mid">
+                    <div id="knob-mdi"><span class="knob-span mdi-highlight">MDI</span></div>
+                    <div class="knob-pointer rotate-run"></div>
+                </div>
+                <div class="knob-sub">
+                    <div></div>
+                    <div id="knob-jog"><span class="knob-span jog-highlight">JOG</span></div>
+                    <div id="knob-home"><span class="knob-span span-home">HOME</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-panel-col4"></div>
+        <div class="bottom-panel-col5">
+            <div><span class="knob-span-no-hover">Cycle Start</span></div>
+            <div>
+                <div class="green-btn"></div>
+            </div>
+            <div>
+                <div class="red-btn"></div>
+            </div>
+        </div>
+        <div class="bottom-panel-col6">
+            <div><span class="knob-span-no-hover">ON</span></div>
+            <div>
+                <div class="green-btn" id="bottom-panel-on"></div>
+            </div>
+            <div>
+                <div class="e-stop-top">E-Stop</div>
+            </div>
+        </div>
+        <div class="bottom-panel-col7">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!--SIDE PANEL STARTS-->
+    <div class="side-panel">
+        <div class="side-panel-sub1">
+            <div><div class="green-btn"></div></div>
+            <div></div>
+            <div><div class="red-btn"></div></div>
+        </div>
+        <div class="side-panel-sub2">
+            <div><div class="yellow-btn"></div></div>
+            <div><div class="black-btn"></div></div>
+            <div><div class="white-btn"></div></div>
+        </div>
+        <div class="side-panel-sub3">
+            <div><div class="green-btn"></div></div>
+            <div></div>
+            <div><div class="red-btn"></div></div>
+        </div>
+        <div class="side-panel-sub4">
+            <div class="small-btn"></div>
+        </div>
+        <div class="side-panel-sub5">
+            <div class="side-jog-top">
+                <div class="side-jog-top-1">
+                    <div id="jog-y"><span class="knob-span">Y</span></div>
+                    <div id="jog-x"><span class="knob-span">X</span></div>
+                </div>
+                <div class="knob-pointer-side"></div>
+                <div class="side-jog-top-3">
+                    <div id="jog-z"><span class="knob-span">Z</span></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="side-jog-bottom">
+                <div><span class="knob-span">.0001</span></div>
+                <div>
+                    <div><span class="knob-span">.001</span></div>
+                    <div class="knob-pointer-side-bottom"></div>
+                </div>
+                <div><span class="knob-span">.01</span></div>
+            </div>
+        </div>
+        <div class="side-panel-sub6">
+            <div class="plus-minus"><span class="knob-span">-</span></div>
+            <div class="dial"></div>
+            <div class="plus-minus"><span class="knob-span">+</span></div>
+        </div>
+        <div class="side-panel-sub7"><div class="e-stop">E-Stop</div></div>
+    </div>
+    <!--JOG INFO BOX-->
+    <div class="jog-info-box">
+        <p>Use the higlihted knobs to jog each axis to near the middle of its travel range.</p><br>
+        <p>The knob higlighted in green controls the speed, where .0001 is slowest and .01 is fastest.</p><br>
+        <p>Rotating the dial (highlighted in blue) counter-clockwise will bring the wheel (Y axis) down, the table (X axis) to the left, and also the table (Z axis) closer to you.</p><br>
+        <p>Switch between axis by moving the knob highlighted in red.</p><br>
+        <p class="last-p">When finished press the "x" icon</p>
+        <i class="fas fa-times"></i>
     </div>
     <script src="script.js"></script>
 </body>
