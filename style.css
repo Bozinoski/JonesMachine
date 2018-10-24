@@ -11,7 +11,37 @@ html{
 }
 body{
     box-sizing: border-box;
-    background-color:#1C428D; 
+    background-color:#1C428D;
+}
+/*  Menu */
+h1{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 4rem;
+    color: black;
+    background-color: white;
+}
+.menu-list{
+    list-style: none;
+    text-align: center;
+    margin-top: 5rem;
+}
+.menu-list > li{
+    padding:.5rem;
+    background-color: rgb(185, 185, 185);
+    color: black;
+    width:20rem;
+    margin:.5rem auto;
+    font-size: 2rem;
+    border-radius: 2rem;
+}
+.menu-list > li:hover{
+    background-color: white;
+    cursor: pointer;
+}
+/*  Start-Up and Homing */
+.startup-homing{
+    display: none;
 }
 /*  Main */
 .main-panel{
@@ -21,7 +51,7 @@ body{
     grid-template-columns: 8% 57% 35%;
     margin-top:1rem;
     margin-left:1rem;
-    background-color:#615D54;
+    background-image: linear-gradient(to bottom right,rgb(134, 134, 134),rgb(80, 79, 79));
     border-radius: 1rem;
 }
 /*  On and Off Buttons Section */
@@ -44,6 +74,7 @@ body{
 }
 .power:hover{
     box-shadow: .1rem .0rem .5rem black, -.1rem 0rem .5rem black,0rem .1rem .5rem black, 0rem -.1rem .5rem black;
+    cursor: pointer;
 }
 .power:active{
     box-shadow: .2rem .0rem .5rem green, -.2rem 0rem .5rem green,0rem .2rem .5rem green, 0rem -.2rem .5rem green;
@@ -203,7 +234,8 @@ body{
 }
 .soft:hover{
     background-color: rgb(182, 180, 180);
-    box-shadow: .2rem .0rem .5rem black, -.2rem 0rem .5rem black,0rem .2rem .5rem black, 0rem -.2rem .5rem black; 
+    box-shadow: .2rem .0rem .5rem black, -.2rem 0rem .5rem black,0rem .2rem .5rem black, 0rem -.2rem .5rem black;
+    cursor: pointer;
 }
 .soft:active{
     box-shadow: .2rem .0rem .5rem green, -.2rem 0rem .5rem green,0rem .2rem .5rem green, 0rem -.2rem .5rem green;
@@ -221,6 +253,7 @@ body{
 .hard-key:hover{
     background-color: rgb(182, 180, 180);
     box-shadow: .2rem .0rem .5rem black, -.2rem 0rem .5rem black,0rem .2rem .5rem black, 0rem -.2rem .5rem black;
+    cursor: pointer;
 }
 .hard-key:active{
     box-shadow: .2rem .0rem .5rem green, -.2rem 0rem .5rem green,0rem .2rem .5rem green, 0rem -.2rem .5rem green;
@@ -262,7 +295,7 @@ body{
 /*---------------------INSTRUCTION CONTAINER---------------------*/
 .instruction-container{
     width:27%;
-    height:80%;
+    height:50%;
     background-color: rgb(32, 32, 32);
     position: absolute;
     left:72%;
@@ -286,7 +319,7 @@ body{
     height:30rem;
     margin-top:2rem;
     margin-left:1rem;
-    background-color:#615D54;
+    background-image: linear-gradient(to bottom right,rgb(134, 134, 134),rgb(80, 79, 79));
     border-radius: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr 1fr 2fr;
@@ -372,6 +405,7 @@ body{
     height: 5rem;
     width:5rem;
     margin: auto;
+    cursor: pointer;
 }
 .red-btn{
     background-color: rgb(120, 0, 0);
@@ -388,6 +422,7 @@ body{
     height: 5rem;
     width:5rem;
     margin: auto;
+    cursor: pointer;
 }
 .highlight{
     box-shadow: 0 0 2rem yellow;
@@ -416,7 +451,7 @@ body{
     height:30rem;
     margin-top:2rem;
     margin-left:1rem;
-    background-color:#615D54;
+    background-image: linear-gradient(to bottom right,rgb(134, 134, 134),rgb(80, 79, 79));
     border-radius: 1rem;
     display: grid;
     grid-template-columns: .8fr .8fr .8fr 2.5fr 1fr 1.2fr 1fr;
@@ -451,6 +486,7 @@ body{
     height: 5rem;
     width:5rem;
     margin: auto;
+    cursor: pointer;
 }
 .white-btn{
     background-color:rgb(190, 190, 190);
@@ -467,6 +503,7 @@ body{
     height: 5rem;
     width:5rem;
     margin: auto;
+    cursor: pointer;
 }
 .black-btn{
     background-color:rgb(30, 30, 30);
@@ -483,6 +520,7 @@ body{
     height: 5rem;
     width:5rem;
     margin: auto;
+    cursor: pointer;
 }
 .small-btn{
     background-color:rgb(82, 82, 82);
@@ -597,6 +635,10 @@ body{
     vertical-align: 4rem;
     font-weight: bold;
 }
+.e-stop:hover{
+    background-color: rgb(200, 0, 0);
+    cursor: pointer;
+}
 .e-stop-top{
     height:7rem;
     width:7rem;
@@ -610,10 +652,14 @@ body{
     margin:auto;
     font-weight: bold;
 }
-/*---------------------SIDE PANEL---------------------*/
+.e-stop-top:hover{
+    background-color: rgb(200, 0, 0);
+    cursor: pointer;
+}
+/*---------------------JOG INFO BOX---------------------*/
 .jog-info-box{
     width:30%;
-    height:49%;
+    height:50%;
     background-color: rgb(32, 32, 32);
     position: absolute;
     left:10%;
@@ -642,8 +688,36 @@ body{
 .fas{
     margin-left:5rem;
     font-size: 3rem;
-    color:yellow;
+    color:rgb(150, 150, 0);
 }
 .fas:hover{
     cursor: pointer;
+    color:rgb(255, 255, 0);
+}
+/*---------------------DONE BOX---------------------*/
+.done-box{
+    background-color: rgb(32, 32, 32);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem yellow;
+    font-family: 'Graduate', cursive;
+    font-size: 1.5rem;
+    color:white;
+    position: fixed;
+    display:none;
+    text-align: center;
+}
+#fas2{
+    font-size: 3rem;
+    color:rgb(150, 150, 0);
+    margin: auto;
+    margin-top:1rem;
+}
+#fas2:hover{
+    cursor: pointer;
+    color:rgb(255, 255, 0);
 }

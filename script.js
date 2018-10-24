@@ -1,5 +1,5 @@
 // ---------- DECLARING VARIABLES
-var init,powerOn, btnOff,step,li0,li1,li2,li21,li22,li23,li24,li25,li26,li3,li31,li32,li33,li34,li35,li36,li4,li5,bottomOn,reset,knobEdit,knobRun,knobMdi,knobJog,knobHome,knobPointer,jogInfoBox,knobXYZ,knobSpeed,dial,exit,keyG,key5,line1;
+var init,powerOn, btnOff,step,li0,li1,li2,li21,li22,li23,li24,li25,li26,li3,li31,li32,li33,li34,li35,li36,li4,li5,bottomOn,reset,knobEdit,knobRun,knobMdi,knobJog,knobHome,knobPointer,jogInfoBox,knobXYZ,knobSpeed,dial,exit,keyG,key5,line1,cycleStart,bottomLine,insert,doneBox,fas2,menu,menu1,startUpHoming;
 
 // ---------- GIVING VARIABLES VALUES
 powerOn = document.querySelector('.btn-on');
@@ -24,6 +24,7 @@ li4 = document.querySelector('.li-4');
 li5 = document.querySelector('.li-5');
 li6 = document.querySelector('.li-6');
 bottomOn = document.querySelector('#bottom-panel-on');
+cycleStart = document.querySelector('.cycle-start');
 reset = document.querySelector('#key-reset');
 knobEdit = document.querySelector('#knob-edit');
 knobRun = document.querySelector('#knob-run');
@@ -32,26 +33,82 @@ knobJog = document.querySelector('#knob-jog');
 knobHome = document.querySelector('#knob-home');
 knobPointer = document.querySelector('#knob-pointer');
 jogInfoBox = document.querySelector('.jog-info-box');
+doneBox = document.querySelector('.done-box');
 knobXYZ = document.querySelector('.knob-pointer-side');
 knobSpeed = document.querySelector('.knob-pointer-side-bottom');
 dial = document.querySelector('.dial');
 exit = document.querySelector('.fas');
+fas2 = document.querySelector('#fas2');
 keyG = document.querySelector('#key-g');
 key5 = document.querySelector('#key-5');
-step = 0;
+line1 = document.querySelector('.line-1');
+insert = document.querySelector('#key-insert');
+eob = document.querySelector('#key-eob');
+menu = document.querySelector('.menu');
+menu1 = document.querySelector('.menu-1');
+startUpHoming = document.querySelector('.startup-homing');
+step = 1000;
 
 // ---------- INIT
 li1.style.color = 'yellow';
 
 // ---------- CLICK EVENTS
 
+menu1.addEventListener('click',function(){
+    menu.style.display = 'none';
+    startUpHoming.style.display = 'block';
+    step = 0;
+});
+
 btnOff.addEventListener('click',function(){
     li1.style.textDecoration = "none";
+    li2.style.textDecoration = "none";
+    li21.style.textDecoration = "none";
+    li22.style.textDecoration = "none";
+    li23.style.textDecoration = "none";
+    li24.style.textDecoration = "none";
+    li25.style.textDecoration = "none";
+    li26.style.textDecoration = "none";
+    li3.style.textDecoration = "none";
+    li31.style.textDecoration = "none";
+    li32.style.textDecoration = "none";
+    li33.style.textDecoration = "none";
+    li34.style.textDecoration = "none";
+    li35.style.textDecoration = "none";
     li1.style.color = 'yellow';
     li2.style.color = 'rgb(105, 105, 105)';
     li21.style.color = 'rgb(105, 105, 105)';
+    li22.style.color = 'rgb(105, 105, 105)';
+    li23.style.color = 'rgb(105, 105, 105)';
+    li24.style.color = 'rgb(105, 105, 105)';
+    li25.style.color = 'rgb(105, 105, 105)';
+    li26.style.color = 'rgb(105, 105, 105)';
+    li3.style.color = 'rgb(105, 105, 105)';
+    li31.style.color = 'rgb(105, 105, 105)';
+    li32.style.color = 'rgb(105, 105, 105)';
+    li33.style.color = 'rgb(105, 105, 105)';
+    li34.style.color = 'rgb(105, 105, 105)';
+    li35.style.color = 'rgb(105, 105, 105)';
     step = 0;
     screen.innerHTML = ''
+    doneBox.style.display = 'none';
+    document.querySelector('.btn-on').classList.add('highlight');
+    document.querySelector('#bottom-panel-on').classList.remove('highlight');
+    document.querySelector('#key-reset').classList.remove('highlight');
+    document.querySelector('.jog-highlight').classList.remove('highlight');
+    document.querySelector('.dial').classList.remove('highlight-blue');
+    document.querySelector('.knob-pointer-side-bottom').classList.remove('highlight-green');
+    document.querySelector('.knob-pointer-side').classList.remove('highlight-red');
+    document.querySelector('.span-home').classList.remove('highlight');
+    document.querySelector('.cycle-start').classList.remove('highlight');
+    document.querySelector('#key-g').classList.remove('highlight');
+    document.querySelector('#key-5').classList.remove('highlight');
+    document.querySelector('#key-insert').classList.remove('highlight');
+    jogInfoBox.style.display = 'none';
+    document.querySelector('.knob-pointer').classList.remove('rotate-home');
+    document.querySelector('.knob-pointer').classList.remove('rotate-jog');
+    document.querySelector('.knob-pointer').classList.remove('rotate-mdi');
+    document.querySelector('.knob-pointer').classList.add('rotate-run');
 });
    
 powerOn.addEventListener('click',function(){
@@ -191,7 +248,7 @@ powerOn.addEventListener('click',function(){
         <div class="line line-1"></div>\
         </div>\
         <div class="right-sub right-sub6">\
-            <div class="yellow-letter">HND **** *** ***</div>\
+            <div class="yellow-letter before-insert">HND **** *** ***</div>\
             <div>00:41:00</div>\
         </div>\
         <div class="right-sub right-sub7">\
@@ -272,14 +329,14 @@ knobHome.addEventListener('click',function(){
         li2.style.color = 'yellow';
         li26.style.color = 'rgb(160, 160, 0)';
         document.querySelector('.span-home').classList.remove('highlight');
-        document.querySelector('#bottom-panel-on').classList.add('highlight');
+        document.querySelector('.cycle-start').classList.add('highlight');
         step = 6;
     }
 });
 
-bottomOn.addEventListener('click', function(){
+cycleStart.addEventListener('click', function(){
     if(step === 6){
-        document.querySelector('#bottom-panel-on').classList.remove('highlight');
+        document.querySelector('.cycle-start').classList.remove('highlight');
         document.querySelector('.mdi-highlight').classList.add('highlight');
         li26.style.textDecoration = "line-through";
         li26.style.color = 'rgb(55, 55, 55)';
@@ -306,29 +363,143 @@ knobMdi.addEventListener('click',function(){
 
 keyG.addEventListener('click',function(){
     if(step === 8){
-        line1 = document.querySelector('.line-1');
+        beforeInsert = document.querySelector('.before-insert');
         document.querySelector('#key-g').classList.remove('highlight');
         document.querySelector('#key-5').classList.add('highlight');
-        line1.textContent = "G";
+        beforeInsert.textContent = "G";
         step = 9;
     }
 });
 key5.addEventListener('mouseup',function(){
     if(step === 9){
-        line1.textContent = "G5";
+        beforeInsert.textContent = "G5";
+        step = 10;
     }
-    step = 10;
 });
 
-key5.addEventListener('click',function(){
+key5.addEventListener('mousedown',function(){
     if(step === 10){
         document.querySelector('#key-5').classList.remove('highlight');
-        line1.textContent = "G55";
+        document.querySelector('#key-insert').classList.add('highlight');
+        beforeInsert.textContent = "G55";
         step = 11;
     }
 });
 
+insert.addEventListener('click',function(){
+    if(step === 11){
+        line1 = document.querySelector('.line-1');
+        document.querySelector('#key-insert').classList.remove('highlight');
+        beforeInsert.textContent = "HND **** *** ***";
+        line1.textContent = "G55";
+        document.querySelector('#key-eob').classList.add('highlight');
+        li32.style.textDecoration = "line-through";
+        li32.style.color = 'rgb(55, 55, 55)';
+        li33.style.color = 'rgb(160, 160, 0)';
+        step = 12;
+    }
+});
 
+eob.addEventListener('click',function(){
+    if(step === 12){
+        document.querySelector('#key-eob').classList.remove('highlight');
+        beforeInsert.textContent = ";";
+        document.querySelector('#key-insert').classList.add('highlight');
+        step = 13;
+    }
+});
+insert.addEventListener('click',function(){
+    if(step === 13){
+        document.querySelector('#key-insert').classList.remove('highlight');
+        beforeInsert.textContent = "HND **** *** ***";
+        line1.textContent = "G55 ;";
+        document.querySelector('#key-reset').classList.add('highlight');
+        li33.style.textDecoration = "line-through";
+        li33.style.color = 'rgb(55, 55, 55)';
+        li34.style.color = 'rgb(160, 160, 0)';
+        step = 14;
+    }
+});
+
+reset.addEventListener('click',function(){
+    if(step === 14){
+        document.querySelector('#key-reset').classList.remove('highlight');
+        document.querySelector('.cycle-start').classList.add('highlight');
+        li34.style.textDecoration = "line-through";
+        li34.style.color = 'rgb(55, 55, 55)';
+        li35.style.color = 'rgb(160, 160, 0)';
+        step = 15;
+    }
+});
+
+cycleStart.addEventListener('click',function(){
+    if(step === 15){
+        document.querySelector('.cycle-start').classList.remove('highlight');
+        li35.style.textDecoration = "line-through";
+        li35.style.color = 'rgb(55, 55, 55)';
+        li3.style.textDecoration = "line-through";
+        li3.style.color = 'rgb(55, 55, 55)';
+        g54 = document.querySelector('#g54');
+        g54.textContent = "G55";
+        line1.textContent = "";
+        doneBox.style.display = 'block';
+        step = 16;
+    }
+});
+
+cycleStart.addEventListener('click',function(){
+    if(step === 15){
+        document.querySelector('.cycle-start').classList.remove('highlight');
+        li35.style.textDecoration = "line-through";
+        li35.style.color = 'rgb(55, 55, 55)';
+        li3.style.textDecoration = "line-through";
+        li3.style.color = 'rgb(55, 55, 55)';
+        g54 = document.querySelector('#g54');
+        g54.textContent = "G55";
+        line1.textContent = "";
+        doneBox.style.display = 'block';
+        step = 16;
+    }
+});
+
+fas2.addEventListener('click',function(){
+    if(step === 16){
+    li1.style.textDecoration = "none";
+    li2.style.textDecoration = "none";
+    li21.style.textDecoration = "none";
+    li22.style.textDecoration = "none";
+    li23.style.textDecoration = "none";
+    li24.style.textDecoration = "none";
+    li25.style.textDecoration = "none";
+    li26.style.textDecoration = "none";
+    li3.style.textDecoration = "none";
+    li31.style.textDecoration = "none";
+    li32.style.textDecoration = "none";
+    li33.style.textDecoration = "none";
+    li34.style.textDecoration = "none";
+    li35.style.textDecoration = "none";
+    li1.style.color = 'yellow';
+    li2.style.color = 'rgb(105, 105, 105)';
+    li21.style.color = 'rgb(105, 105, 105)';
+    li22.style.color = 'rgb(105, 105, 105)';
+    li23.style.color = 'rgb(105, 105, 105)';
+    li24.style.color = 'rgb(105, 105, 105)';
+    li25.style.color = 'rgb(105, 105, 105)';
+    li26.style.color = 'rgb(105, 105, 105)';
+    li3.style.color = 'rgb(105, 105, 105)';
+    li31.style.color = 'rgb(105, 105, 105)';
+    li32.style.color = 'rgb(105, 105, 105)';
+    li33.style.color = 'rgb(105, 105, 105)';
+    li34.style.color = 'rgb(105, 105, 105)';
+    li35.style.color = 'rgb(105, 105, 105)';
+    step = 0;
+    screen.innerHTML = ''
+    doneBox.style.display = 'none';
+    document.querySelector('.btn-on').classList.add('highlight');
+    document.querySelector('.knob-pointer').classList.remove('rotate-mdi');
+    document.querySelector('.knob-pointer').classList.add('rotate-run');
+    }
+});
 
 /*document.querySelector('').classList.remove('');
 document.querySelector('').classList.add('');*/
