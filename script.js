@@ -1,5 +1,5 @@
 // ---------- DECLARING VARIABLES
-var init,powerOn, btnOff,step,li0,li1,li2,li21,li22,li23,li24,li25,li26,li3,li31,li32,li33,li34,li35,li36,li4,li5,bottomOn,reset,knobEdit,knobRun,knobMdi,knobJog,knobHome,knobPointer,jogInfoBox,knobXYZ,knobSpeed,dial,exit,keyG,key5,line1,cycleStart,bottomLine,insert,doneBox,fas2,menu,menu1,startUpHoming;
+var init,powerOn, btnOff,step,li0,li1,li2,li21,li22,li23,li24,li25,li26,li3,li31,li32,li33,li34,li35,li36,li4,li5,bottomOn,reset,knobEdit,knobRun,knobMdi,knobJog,knobHome,knobPointer,jogInfoBox,knobXYZ,knobSpeed,dial,exit,keyG,key5,line1,cycleStart,bottomLine,insert,doneBox,fas2,menu,menu1,startUpHoming,backBtn;
 
 // ---------- GIVING VARIABLES VALUES
 powerOn = document.querySelector('.btn-on');
@@ -47,12 +47,65 @@ eob = document.querySelector('#key-eob');
 menu = document.querySelector('.menu');
 menu1 = document.querySelector('.menu-1');
 startUpHoming = document.querySelector('.startup-homing');
+backBtn = document.querySelector('.back-btn');
 step = 1000;
 
 // ---------- INIT
 li1.style.color = 'yellow';
 
 // ---------- CLICK EVENTS
+backBtn.addEventListener('click',function(){
+    startUpHoming.style.display = 'none';
+    menu.style.display = 'block';
+    li1.style.textDecoration = "none";
+    li2.style.textDecoration = "none";
+    li21.style.textDecoration = "none";
+    li22.style.textDecoration = "none";
+    li23.style.textDecoration = "none";
+    li24.style.textDecoration = "none";
+    li25.style.textDecoration = "none";
+    li26.style.textDecoration = "none";
+    li3.style.textDecoration = "none";
+    li31.style.textDecoration = "none";
+    li32.style.textDecoration = "none";
+    li33.style.textDecoration = "none";
+    li34.style.textDecoration = "none";
+    li35.style.textDecoration = "none";
+    li1.style.color = 'yellow';
+    li2.style.color = 'rgb(105, 105, 105)';
+    li21.style.color = 'rgb(105, 105, 105)';
+    li22.style.color = 'rgb(105, 105, 105)';
+    li23.style.color = 'rgb(105, 105, 105)';
+    li24.style.color = 'rgb(105, 105, 105)';
+    li25.style.color = 'rgb(105, 105, 105)';
+    li26.style.color = 'rgb(105, 105, 105)';
+    li3.style.color = 'rgb(105, 105, 105)';
+    li31.style.color = 'rgb(105, 105, 105)';
+    li32.style.color = 'rgb(105, 105, 105)';
+    li33.style.color = 'rgb(105, 105, 105)';
+    li34.style.color = 'rgb(105, 105, 105)';
+    li35.style.color = 'rgb(105, 105, 105)';
+    screen.innerHTML = ''
+    doneBox.style.display = 'none';
+    document.querySelector('.btn-on').classList.add('highlight');
+    document.querySelector('#bottom-panel-on').classList.remove('highlight');
+    document.querySelector('#key-reset').classList.remove('highlight');
+    document.querySelector('.jog-highlight').classList.remove('highlight');
+    document.querySelector('.dial').classList.remove('highlight-blue');
+    document.querySelector('.knob-pointer-side-bottom').classList.remove('highlight-green');
+    document.querySelector('.knob-pointer-side').classList.remove('highlight-red');
+    document.querySelector('.span-home').classList.remove('highlight');
+    document.querySelector('.cycle-start').classList.remove('highlight');
+    document.querySelector('#key-g').classList.remove('highlight');
+    document.querySelector('#key-5').classList.remove('highlight');
+    document.querySelector('#key-insert').classList.remove('highlight');
+    jogInfoBox.style.display = 'none';
+    document.querySelector('.knob-pointer').classList.remove('rotate-home');
+    document.querySelector('.knob-pointer').classList.remove('rotate-jog');
+    document.querySelector('.knob-pointer').classList.remove('rotate-mdi');
+    document.querySelector('.knob-pointer').classList.add('rotate-run');
+    step = 1000;
+});
 
 menu1.addEventListener('click',function(){
     menu.style.display = 'none';
